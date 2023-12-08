@@ -1,0 +1,69 @@
+
+LineChart
+import matplotlib.pyplot as plt
+
+year=[1960,1970,1980,1990,2000,2010]
+pop_pakisthan = [44.91,58.09,78.07,107.7,138.5,170.6]
+pop_india = [449.48,553.57,696.783,870.133,1000.4,1309.1]
+
+plt.plot(year,pop_pakisthan,color="Green")
+plt.plot(year,pop_india,color="Orange")
+plt.xlabel("countries")
+plt.ylabel("population in million")
+plt.title("India v/s Pakisthan population till 2019")
+plt.show();
+
+Barchart
+import numpy as np
+import matplotlib.pyplot as plt
+
+objects = ("Dotnets","C++","Java","Python","C","Perl")
+y_pos = np.arange(len(objects))
+performance = [8,10,9,20,4,1]
+plt.bar(y_pos,performance,align = "center",color = "cyan")
+plt.xticks(y_pos,objects)
+plt.ylabel("Usage")
+plt.title("Programing language usage")
+plt.show()
+
+Histogram
+import matplotlib.pyplot as plt
+
+bldsugar_men = [113,85,90,150,149,88,93,115,135,80,77,82,129]
+bldsugar_women = [67,98,89,120,133,150,84,69,89,79,120,112,100]
+
+plt.xlabel("Sugar range")
+plt.ylabel("Total number of patients")
+plt.title("Blood Suger Analysis")
+plt.hist(([bldsugar_men,bldsugar_women]),bins = [80,100,125,150] ,
+         rwidth = 0.95 , color =["cyan","gray"] , label = ["men","women"])
+plt.legend()
+
+plt.show()
+
+BoxPlot
+import matplotlib.pyplot as plt
+
+value1 = [72,76,24,40,57,62,75,78,31,32]
+value2 = [62,5,91,25,36,32,96,95,30,90]
+value3 = [23,89,12,78,72,89,25,69,68,86]
+value4 = [99,73,70,16,81,61,88,98,10,87]
+
+box_plotdata = [value1,value2,value3,value4]
+box = plt.boxplot(box_plotdata , vert=1 , patch_artist=True,labels=['course1','course2','course3','course4'])
+
+colors = ["cyan","lightblue","lightgreen","tan"]
+for patch,color in zip(box['boxes'],colors):
+    patch.set_facecolor(color)
+plt.show()
+    
+
+ScatterPlot
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.random.randn(1000)
+y=np.random.randn(1000)
+plt.scatter(x,y)
+plt.show()
+
+ 
